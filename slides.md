@@ -28,6 +28,10 @@ Infrastructure as code (IaC) is the process of managing and provisioning compute
 
 ---
 
+<img src="images/03.png">
+
+---
+
 ## Terraform in A Nutshell
 
 - Base terraform comes in single executable form
