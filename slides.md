@@ -2,7 +2,7 @@
 
 ---
 
-<img src="images/01.png" height="1092" width="1944">
+<img src="images/01.png">
 
 ---
 
