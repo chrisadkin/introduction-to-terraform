@@ -28,11 +28,11 @@ Infrastructure as code (IaC) is the process of managing and provisioning compute
 
 ---
 
-<img src="images/03.png">
+<img src="images/03.png" width="1920" height="550">
 
 ---
 
-<img src="images/04.png">
+<img src="images/04.png" width="1920" height="550">
 
 ---
 
