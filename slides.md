@@ -22,7 +22,7 @@ Infrastructure as code (IaC) is the process of managing and provisioning compute
 
 - Drift
 
---- 
+---
 
 <img src="images/02.png">
 
