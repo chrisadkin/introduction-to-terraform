@@ -1,10 +1,7 @@
 # An Introduction to Terraform
 
 ---
-
-## Wheres The Powerpoint ?
-
-<img style="float: left; margin: 0px 15px 15px 0px;" src="https://github.com/chrisadkin/introduction-to-terraform/blob/main/images/01.PNG?raw=true">
+<img style="float: left; margin: 0px 15px 15px 0px;" src="https://github.com/chrisadkin/introduction-to-terraform/blob/main/images/01.png?raw=true">
 ---
 
 ## Infrastructure-As-Code 101
