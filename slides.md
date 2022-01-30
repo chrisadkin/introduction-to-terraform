@@ -22,6 +22,26 @@ From Wikipedia
 
 - Idempotency
 
-- Drif
+- Drift
 
 --- 
+
+<img src="images/02.png">
+
+---
+
+## Terraform in A Nutshell
+
+- Base terraform comes in single executable form
+
+- Declarative
+
+- Stateful
+
+- Agentless
+
+- 'Configuration' is the unit of deployment
+
+- Configurations are written in Hashicorp Control Language
+
+- Providers are used to provision resources
