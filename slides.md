@@ -1,7 +1,7 @@
 # An Introduction to Terraform
 
 ---
-<img src="images/01.png" style="float: right"/>
+<img src="images/01.png" height="1092" width="1944">
 ---
 
 ## Infrastructure-As-Code 101
