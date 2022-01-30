@@ -1,7 +1,7 @@
 # An Introduction to Terraform
 
 ---
-<img style="float: left; margin: 0px 15px 15px 0px;" src="https://github.com/chrisadkin/introduction-to-terraform/blob/main/images/01.png?raw=true">
+<img src="images/01.png" style="float: right"/>
 ---
 
 ## Infrastructure-As-Code 101
