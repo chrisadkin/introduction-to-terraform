@@ -46,10 +46,48 @@ Infrastructure as code (IaC) is the process of managing and provisioning compute
 
 - Agentless
 
-- A 'Configuration' is the unit of deployment
+- Written in GOLANG, the same language used for Kubernetes 
+
+---
+
+## Configurations
+
+- A configuration is the unit of deployment
 
 - Configurations are written in Hashicorp Control Language
 
-- Providers are used to provision resources
+- Cofigurations consist of one or more resources
 
-- Written in GOLANG, the same language used for Kubernetes 
+- Resources are created via providers 
+
+---
+
+## A Basic Resource
+```
+resource "kubectl_manifest" "arc_sql_mi" {
+  wait = true
+  yaml_body = <<YAML
+apiVersion: sql.arcdata.microsoft.com/v1
+kind: SqlManagedInstance
+.
+.
+.
+YAML
+
+  provisioner "local-exec" {
+    command =<<EOF
+      until [ $(kubectl get sqlmanagedinstances -n ${var.namespace} | grep ${var.instance_name} | egrep '(Ready|Error)' | wc -l) -eq 1 ]; do
+        echo "\nWaiting for Azure Arc Managed SQL Server instance to deploy\n"
+        kubectl get sqlmanagedinstances -n ${var.namespace} | grep ${var.instance_name}
+        echo "\n"
+        kubectl get all -n ${var.namespace} | grep ${var.instance_name} 
+        sleep 20
+      done
+    EOF
+  }
+
+  depends_on = [
+    kubernetes_secret.arc_sql_mi_login_secret
+  ]
+}
+```
