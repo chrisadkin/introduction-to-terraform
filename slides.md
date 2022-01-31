@@ -109,5 +109,41 @@ resource "local_file" "all_yml" {
 
 ---
 
+## State
+
+- Stored in a local file by default
+
+- Can be stored in most cloud provider object stores or Terraform cloud
+
+- Can be imported
+
+- **Do not lose the state of your configuration(s) !!!**
+
+---
+
+## Backends
+
+```
+terraform {
+  backend "azurerm" {}
+}
+
+data "terraform_remote_state" "state" {
+  backend = "azurerm"
+  config {
+    resource_group_name  = var.resource_group
+    storage_account_name = var.storage_account
+    container_name       = var.storage_container
+    key                  = var.storage_account_key 
+  }
+}
+```
+---
+
 ## Demos
 
+To try these out on your laptop, you will need:
+
+- [minikube](https://minikube.sigs.k8s.io/docs/start/)
+
+- [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
