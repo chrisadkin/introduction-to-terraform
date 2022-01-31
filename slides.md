@@ -8,7 +8,9 @@
 
 ## Infrastructure-As-Code 101
 
-Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.[1] The IT infrastructure managed by this process comprises both physical equipment, such as bare-metal servers, as well as virtual machines, and associated configuration resources. The definitions may be in a version control system. The code in the definition files may use either scripts or declarative definitions . . .
+## Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or 
+## interactive configuration tools.[1] The IT infrastructure managed by this process comprises both physical equipment, such as bare-metal servers, as well as virtual machines, and associated 
+## configuration resources. The definitions may be in a version control system. The code in the definition files may use either scripts or declarative definitions . . .
 
 ---
 
@@ -97,14 +99,12 @@ YAML
 
 ## Data Sources
 ```
-<pre><code><font size = "10">
 data "http" "all_yml" {
-  url = "https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/inventory/sample/group_vars/all/all.yml"
+  url = "https://raw.githubusercontent.com/. . ./all/all.yml"
 }
 
 resource "local_file" "all_yml" {
-  content  = replace(replace(data.http.all_yml.body, "/#   - 8.8/", "  - 8.8"), "/# upstream_dns_servers/", "upstream_dns_servers")
+  content  = replace(data.http.all_yml.body, "/#   - 8.8/", "  - 8.8"))
   filename = "./all.yaml"
 }
-</pre></code></font>
 ```
