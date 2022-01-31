@@ -56,7 +56,7 @@ Infrastructure as code (IaC) is the process of managing and provisioning compute
 
 - Configurations are written in Hashicorp Control Language
 
-- Cofigurations consist of one or more resources
+- Configurations consist of one or more resources
 
 - Resources are created via providers 
 
@@ -97,6 +97,7 @@ YAML
 
 ## Data Sources
 ```
+<pre><code><font size = "10">
 data "http" "all_yml" {
   url = "https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/inventory/sample/group_vars/all/all.yml"
 }
@@ -105,4 +106,5 @@ resource "local_file" "all_yml" {
   content  = replace(replace(data.http.all_yml.body, "/#   - 8.8/", "  - 8.8"), "/# upstream_dns_servers/", "upstream_dns_servers")
   filename = "./all.yaml"
 }
+</pre></code></font>
 ```
