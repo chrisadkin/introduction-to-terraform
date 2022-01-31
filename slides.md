@@ -67,10 +67,7 @@ Infrastructure as code (IaC) is the process of managing and provisioning compute
 resource "kubectl_manifest" "arc_sql_mi" {
   wait = true
   yaml_body = <<YAML
-apiVersion: sql.arcdata.microsoft.com/v1
-kind: SqlManagedInstance
-.
-.
+  .
 YAML
 
   provisioner "local-exec" {
