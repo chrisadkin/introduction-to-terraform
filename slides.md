@@ -68,6 +68,7 @@ resource "kubectl_manifest" "arc_sql_mi" {
   wait = true
   yaml_body = <<YAML
   .
+  .
 YAML
 
   provisioner "local-exec" {
@@ -79,3 +80,17 @@ YAML
   ]
 }
 ```
+
+---
+
+## Use Provisioners With **Caution**
+
+- The code inside any provisioner cannot be modelled as a plan
+
+- To undo the action of a provisioner, a destroy provisioner must be written
+
+- Variables cannot be used inside of destroy provisioners
+
+- Per [Hashicorp's documentation](https://www.terraform.io/language/resources/provisioners/syntax); provisioners are a last resort
+
+- Never say to anyone that knows Terraform "You can put all the code inside a provisioner"
