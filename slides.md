@@ -95,6 +95,10 @@ YAML
 
 ---
 
+## Variables
+
+---
+
 ## Data Sources
 ```
 data "http" "all_yml" {
@@ -113,7 +117,7 @@ resource "local_file" "all_yml" {
 
 - Stored in a local file by default
 
-- Can be stored in most cloud provider object stores or Terraform cloud
+- Can also be stored in most object stores or Terraform cloud
 
 - Can be imported
 
@@ -147,3 +151,21 @@ To try these out on your laptop, you will need:
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
+---
+
+## Best Practices
+
+- Avoid provisioners where possible
+
+- Use a backend to securely store state
+
+- Leverage .tfvars files and git ignore them
+
+- Prefer the use of templates, regex and replace functions
+  to embedding sed, awk or perl in configurations
+
+- Group configurations that use the same providers into modules
+
+
+
