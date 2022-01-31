@@ -83,14 +83,26 @@ YAML
 
 ---
 
-## Use Provisioners With **Caution**
+## Provisioners - Exercise **Caution** !
 
-- The code inside any provisioner cannot be modelled as a plan
+- Plans cannot be produced for provisioners
 
 - To undo the action of a provisioner, a destroy provisioner must be written
 
 - Variables cannot be used inside of destroy provisioners
 
-- Per [Hashicorp's documentation](https://www.terraform.io/language/resources/provisioners/syntax); provisioners are a last resort
+- [Provisioners are a last resort](https://www.terraform.io/language/resources/provisioners/syntax)
 
-- Never say to anyone that knows Terraform "You can put all the code inside a provisioner"
+---
+
+## Data Sources
+```
+data "http" "all_yml" {
+  url = "https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/inventory/sample/group_vars/all/all.yml"
+}
+
+resource "local_file" "all_yml" {
+  content  = replace(replace(data.http.all_yml.body, "/#   - 8.8/", "  - 8.8"), "/# upstream_dns_servers/", "upstream_dns_servers")
+  filename = "./all.yaml"
+}
+```
