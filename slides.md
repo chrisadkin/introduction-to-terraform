@@ -71,19 +71,10 @@ apiVersion: sql.arcdata.microsoft.com/v1
 kind: SqlManagedInstance
 .
 .
-.
 YAML
 
   provisioner "local-exec" {
-    command =<<EOF
-      until [ $(kubectl get sqlmanagedinstances -n ${var.namespace} | grep ${var.instance_name} | egrep '(Ready|Error)' | wc -l) -eq 1 ]; do
-        echo "\nWaiting for Azure Arc Managed SQL Server instance to deploy\n"
-        kubectl get sqlmanagedinstances -n ${var.namespace} | grep ${var.instance_name}
-        echo "\n"
-        kubectl get all -n ${var.namespace} | grep ${var.instance_name} 
-        sleep 20
-      done
-    EOF
+    command = "This is a local provisioner"
   }
 
   depends_on = [
