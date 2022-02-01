@@ -62,7 +62,21 @@
 
 ---
 
-### Fundamental Configuration Building Block
+### Configuration Lifecycle
+
+```
+terraform init
+
+terraform plan
+
+terraform apply
+
+terraform destroy 
+```
+
+---
+
+### Configuration Building Blocks
 
 - Providers
 
@@ -202,6 +216,29 @@ Can be:
 - simple or complex, e.g. maps and nested maps
 
 ---
+
+## Interpolation
+
+```
+resource "kubectl_manifest" "test_pvc" {
+  wait = true
+  yaml_body = <<YAML
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: ${var.pvc_size}
+  storageClassName: ${var.storage_class}
+YAML
+```
+
+---
+
 
 ## State
 
