@@ -62,6 +62,44 @@
 
 ---
 
+### Fundamental Configuration Building Block
+
+- Providers
+
+- Resources
+
+- Data sources
+
+---
+
+## A Basic Provider
+
+```
+provider "kubernetes" {
+  config_path    = "~/.kube/config"
+  config_context = "my-context"
+}
+```
+
+---
+## Providers With Aliases
+
+```
+provider "kubernetes" {
+  alias          = "dev"
+  config_path    = "~/.kube/config"
+  config_context = "dev-context"
+}
+
+provider "kubernetes" {
+  alias          = "test"
+  config_path    = "~/.kube/config"
+  config_context = "test-context"
+}
+```
+
+---
+
 ## A Basic Resource
 ```
 resource "kubectl_manifest" "arc_sql_mi" {
