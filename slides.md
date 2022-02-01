@@ -151,6 +151,7 @@ data "terraform_remote_state" "state" {
   }
 }
 ```
+
 ---
 
 ## Demos
@@ -165,15 +166,15 @@ To try these out on your laptop, you will need:
  
 ## Terraform Vs Ansible
 
-| Feature                      | Ansible                 | Terraform     |
-|------------------------------|-------------------------|---------------|
-|Unit of deployment            |Playbook                 |Configuration  |
-|Main focus area               |Configuration management |Orchestration  |
-|Declarative/Imperitive        |Imperitive               |Declarative    |
-|Deployment language           |YAML                     |HCL            |
-|Stateful                      |No                       |Yes            |
-|Codeless resource destruction |No                       |Yes            |
-|Agentless                     |Yes                      |Yes            |
+|Feature|Ansible|Terraform|
+|-------|-------|---------|
+|Unit of deployment|Playbook|Configuration|
+|Main focus area|Configuration management|Orchestration|
+|Declarative/Imperitive|Imperitive|Declarative|
+|Deployment language|YAML|HCL|
+|Stateful|No|Yes|
+|Codeless resource destruction|No|Yes|
+|Agentless|Yes|Yes|
 
 ---
 
