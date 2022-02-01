@@ -94,7 +94,17 @@ YAML
 
 ---
 
-## Variables
+## Input Variables
+
+Can be:
+
+- specified as environment variables prefixed by TF_VAR_
+
+- specified as defaults in variables definition files
+
+- specified in .tfvars files, variable from terraform.tfvars are always loaded by default
+
+- simple or complex, e.g. maps and nested maps
 
 ---
 
@@ -150,6 +160,20 @@ To try these out on your laptop, you will need:
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
+---
+ 
+## Terraform Vs Ansible
+
+| Feature                      | Ansible                 | Terraform     |
+|------------------------------|-------------------------|---------------|
+|Unit of deployment            |Playbook                 |Configuration  |
+|Main focus area               |Configuration management |Orchestration  |
+|Declarative/Imperitive        |Imperitive               |Declarative    |
+|Deployment language           |YAML                     |HCL            |
+|Stateful                      |No                       |Yes            |
+|Codeless resource destruction |No                       |Yes            |
+|Agentless                     |Yes                      |Yes            |
 
 ---
 
