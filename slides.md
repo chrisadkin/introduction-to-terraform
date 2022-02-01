@@ -68,7 +68,30 @@ resource "kubectl_manifest" "arc_sql_mi" {
   .
   .
   .
-YAML
+}
+```
+---
+
+## Resource With A Provisioner 
+```
+resource "kubectl_manifest" "arc_sql_mi" {
+  .
+  .
+  .
+
+  provisioner "local-exec" {
+    command = "This is a local provisioner"
+  }
+}
+```
+---
+
+## Adding a Depends On Clause
+```
+resource "kubectl_manifest" "arc_sql_mi" {
+  .
+  .
+  .
 
   provisioner "local-exec" {
     command = "This is a local provisioner"
