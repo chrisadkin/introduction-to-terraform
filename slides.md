@@ -177,18 +177,6 @@ resource "null_resource" "hand_crafted" {
 
 ---
 
-## Provisioners - **Caution** !
-
-- Plans cannot be produced for provisioners
-
-- To undo the action of a provisioner, a destroy provisioner must be written
-
-- Variables cannot be used inside of destroy provisioners
-
-- [Provisioners are a last resort](https://www.terraform.io/language/resources/provisioners/syntax)
-
----
-
 ## Data Sources
 ```
 data "http" "all_yml" {
@@ -293,23 +281,22 @@ To try these out on your laptop, you will need:
 |Agentless|Yes|Yes|
 
 ---
+# Best Practices
+---
 
-## Best Practices
+## Provisioners
 
-- Avoid provisioners where possible
+- [Provisioners are a last resort](https://www.terraform.io/language/resources/provisioners/syntax)
 
-- Use a backend to securely store state
+- Plans cannot be produced for provisioners
 
-- Leverage .tfvars files and git ignore them
+- To undo the action of a provisioner, a destroy provisioner must be written
 
-- Prefer the use of templates, regex and replace functions
-  to embedding sed, awk or perl in configurations
-
-- Group configurations that use the same providers into modules
+- Variables cannot be used inside of destroy provisioners
 
 ---
 
-## Best Practices - .gitignore files
+## .gitignore files
 ```
 **/.terraform/*
 *.tfstate
@@ -326,3 +313,13 @@ override.tf.json
 terraform.rc
 ```
 
+---
+
+## Miscallaneous 
+
+- Use a backend to securely store state
+
+- Prefer the use of templates, regex and replace functions
+  to embedding sed, awk or perl in configurations
+
+- Group configurations that use the same providers into modules
