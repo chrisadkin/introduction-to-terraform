@@ -65,8 +65,7 @@
 ## A Basic Resource
 ```
 resource "kubectl_manifest" "arc_sql_mi" {
-  wait = true
-  yaml_body = <<YAML
+  .
   .
   .
 YAML
