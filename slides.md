@@ -46,7 +46,7 @@
 
 - Agentless
 
-- Written in GOLANG (same language used for Kubernetes)
+- Written in GOLANG
 
 ---
 
@@ -70,6 +70,7 @@ resource "kubectl_manifest" "arc_sql_mi" {
   .
 }
 ```
+
 ---
 
 ## Resource With A Provisioner 
@@ -84,6 +85,7 @@ resource "kubectl_manifest" "arc_sql_mi" {
   }
 }
 ```
+
 ---
 
 ## Adding a Depends On Clause
