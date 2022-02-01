@@ -163,7 +163,7 @@ To try these out on your laptop, you will need:
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ---
- 
+
 ## Terraform Vs Ansible
 
 |Feature|Ansible|Terraform|
