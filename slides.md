@@ -146,6 +146,23 @@ resource "kubectl_manifest" "arc_sql_mi" {
 
 ---
 
+## Null Resources
+
+```
+resource "null_resource" "hand_crafted" {
+  provisioner "local-exec" {
+    command = "This is a local provisioner"
+  }
+
+  provisioner "local-exec" {
+    when    = destroy
+    command = "On destroy provisioner"
+  }
+}
+```
+
+---
+
 ## Provisioners - **Caution** !
 
 - Plans cannot be produced for provisioners
@@ -155,20 +172,6 @@ resource "kubectl_manifest" "arc_sql_mi" {
 - Variables cannot be used inside of destroy provisioners
 
 - [Provisioners are a last resort](https://www.terraform.io/language/resources/provisioners/syntax)
-
----
-
-## Input Variables
-
-Can be:
-
-- specified as environment variables prefixed by TF_VAR_
-
-- specified as defaults in variables definition files
-
-- specified in .tfvars files, variable from terraform.tfvars are always loaded by default
-
-- simple or complex, e.g. maps and nested maps
 
 ---
 
@@ -183,6 +186,20 @@ resource "local_file" "all_yml" {
   filename = "./all.yaml"
 }
 ```
+
+---
+
+## Input Variables
+
+Can be:
+
+- specified as environment variables prefixed by TF_VAR_
+
+- specified as defaults in variables definition files
+
+- specified in .tfvars files, variable from terraform.tfvars are always loaded by default
+
+- simple or complex, e.g. maps and nested maps
 
 ---
 
