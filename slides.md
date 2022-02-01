@@ -82,6 +82,7 @@ provider "kubernetes" {
 ```
 
 ---
+
 ## Providers With Aliases
 
 ```
