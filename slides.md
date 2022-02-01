@@ -220,8 +220,6 @@ Can be:
 ## Interpolation
 
 ```
-resource "kubectl_manifest" "test_pvc" {
-  wait = true
   yaml_body = <<YAML
 kind: PersistentVolumeClaim
 apiVersion: v1
