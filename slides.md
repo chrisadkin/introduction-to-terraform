@@ -273,14 +273,13 @@ To try these out on your laptop, you will need:
 
 ## Demos - What We Will Cover
 
-- demo-01: simple configuration to create a namespace
+- demo-01: namespace creation
 - demo-02: namespace creation with variables
 - demo-03: PVC creation with a third party provider
 - demo-04: PVC creation using a for loop
 - demo-05: template usage
 
-
-
+---
 
 ## Terraform Vs Ansible
 
@@ -335,4 +334,3 @@ terraform.rc
 
 - Prefer the use of templates, regex and replace functions
   to embedding sed, awk or perl in configurations
-
