@@ -257,7 +257,11 @@ data "terraform_remote_state" "state" {
 
 ---
 
-## Demos
+# Demos
+
+---
+
+## Demos - Prerequisites
 
 To try these out on your laptop, you will need:
 
@@ -266,6 +270,17 @@ To try these out on your laptop, you will need:
 - [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ---
+
+## Demos - What We Will Cover
+
+- demo-01: simple configuration to create a namespace
+- demo-02: namespace creation with variables
+- demo-03: PVC creation with a third party provider
+- demo-04: PVC creation using a for loop
+- demo-05: template usage
+
+
+
 
 ## Terraform Vs Ansible
 
