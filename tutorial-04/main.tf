@@ -18,18 +18,19 @@ provider "kubernetes" {
 }
 
 resource "kubectl_manifest" "test_pvc" {
-  wait = true
-  yaml_body = <<YAML
+  for_each = var.pvcs
+    wait = true
+    yaml_body = <<YAML
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: test-pvc
+  name: ${each.value["name"]} 
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: ${var.pvc_size}
-  storageClassName: ${var.storage_class}
+      storage: ${each.value["size"]}
+  storageClassName: standard 
 YAML
 }

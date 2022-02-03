@@ -5,12 +5,12 @@ variable "pvcs" {
     }))
   default = {
     test = {
-        name = "test-pvc"
-        size = "1Gi 
+      name = "test-pvc"
+      size = "2Gi"
     },
     dev = {
-        name = "dev-pvc"
-        size = "1Gi 
+      name = "dev-pvc"
+      size = "1Gi" 
     }
   }
 }

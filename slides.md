@@ -62,16 +62,14 @@
 
 ---
 
-### Configuration Lifecycle
+### Main Commands
 
 ```
-terraform init
-
-terraform plan
-
-terraform apply
-
-terraform destroy 
+  init          Prepare your working directory for other commands
+  validate      Check whether the configuration is valid
+  plan          Show changes required by the current configuration
+  apply         Create or update infrastructure
+  destroy       Destroy previously-created infrastructure
 ```
 
 ---
@@ -214,6 +212,7 @@ apiVersion: v1
 metadata:
   name: test-pvc
 spec:
+spec:
   accessModes:
   - ReadWriteOnce
   resources:
@@ -322,4 +321,3 @@ terraform.rc
 - Prefer the use of templates, regex and replace functions
   to embedding sed, awk or perl in configurations
 
-- Group configurations that use the same providers into modules
