@@ -50,6 +50,10 @@
 
 ---
 
+<img src="images/05.png" width="1920" height="550">
+
+---
+
 ## Configurations
 
 - A configuration is the unit of deployment
@@ -328,9 +332,23 @@ terraform.rc
 
 ---
 
-## Miscallaneous 
+## Miscellaneous 
 
 - Use a backend to securely store state
 
 - Prefer the use of templates, regex and replace functions
   to embedding sed, awk or perl in configurations
+
+---
+
+### Advanced Topics
+
+- [Mono repo Vs. Multi repo](https://www.hashicorp.com/blog/terraform-mono-repo-vs-multi-repo-the-great-debate)
+
+- [Terragrunt](https://terragrunt.gruntwork.io/)
+
+- [Terratest](https://terratest.gruntwork.io/)
+
+- [Implementing providers](https://www.hashicorp.com/resources/creating-terraform-provider-for-anything) 
+
+
