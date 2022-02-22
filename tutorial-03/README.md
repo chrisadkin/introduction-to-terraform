@@ -13,7 +13,7 @@ terraform apply --auto-approve
 
 ## Destroy
 
-Execute the following command from the `Arc-PX-VMware-Faststart/azure_data_services` directory
+Execute the following command from the `tutorial-03` directory
 ```
 terraform destroy --auto-approve 
 ```
