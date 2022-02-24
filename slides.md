@@ -78,6 +78,10 @@
 
 ---
 
+<img src="images/06.png" width="1920" height="550">
+
+---
+
 ### Configuration Building Blocks
 
 - Providers
@@ -261,11 +265,11 @@ data "terraform_remote_state" "state" {
 
 ---
 
-# Demos
+# Hands-On Tutorial Exercises
 
 ---
 
-## Demos - Prerequisites
+## Tutorial Exercises - Prerequisites
 
 To try these out on your laptop, you will need:
 
@@ -275,13 +279,13 @@ To try these out on your laptop, you will need:
 
 ---
 
-## Demos - What We Will Cover
+## What We Will Cover
 
-- demo-01: namespace creation
-- demo-02: namespace creation with variables
-- demo-03: PVC creation with a third party provider
-- demo-04: PVC creation using a for loop
-- demo-05: template usage
+- 1: namespace creation
+- 2: namespace creation with variables
+- 3: PVC creation with a third party provider
+- 4: PVC creation using a for loop
+- 5: template usage
 
 ---
 
