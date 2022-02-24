@@ -283,13 +283,24 @@ data "terraform_remote_state" "state" {
 
 ## Modules
 ```
-parent module main.tf
-              variables.tf
-              values.tfvars +------ Child module main.tf
-                            |                    variables.tf 
-                            |
-                            +------ Child module main.tf
-                                                 variables.tf 
+parent module 
+             main.tf
+             variables.tf
+             values.tfvars +------ Child module (A)
+                           |                       main.tf
+                           |                       variables.tf 
+                           |
+                           +------ Child module (B)
+                           |                       main.tf
+                           |                       variables.tf 
+                           |
+                           +------ Child module (C)
+                                                   main.tf
+                                                   variables.tf 
+
+terraform apply -target=module.module_a
+
+terraform apply -target=module.module_a.resource_a
 ```
 
 ---
