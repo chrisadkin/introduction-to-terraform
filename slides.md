@@ -249,7 +249,6 @@ YAML
 
 ---
 
-
 ## State
 
 - Stored in a local file by default
@@ -278,6 +277,19 @@ data "terraform_remote_state" "state" {
     key                  = var.storage_account_key 
   }
 }
+```
+
+---
+
+## Modules
+```
+parent module main.tf
+              variables.tf
+              values.tfvars +------ Child module main.tf
+                            |                    variables.tf 
+                            |
+                            +------ Child module main.tf
+                                                 variables.tf 
 ```
 
 ---
