@@ -372,4 +372,6 @@ terraform.rc
 
 - [Implementing providers](https://www.hashicorp.com/resources/creating-terraform-provider-for-anything) 
 
+- [GitOps and Terraform](https://www.hashicorp.com/resources/gitops-and-terraform-enterprise-a-match-made-in-heaven-at-state-farm)
 
+- [Hashicorp recommended workflows](https://www.terraform.io/cloud-docs/guides/recommended-practices)  
