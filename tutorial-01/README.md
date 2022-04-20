@@ -1,6 +1,6 @@
 # Objectives
 
-Demonstrate the declarative native of Terraform with a simple configuration which creates a Kubernetes namespace.
+Demonstrate the declarative nature of Terraform with a simple configuration which creates a Kubernetes namespace.
 
 # Instructions
 
