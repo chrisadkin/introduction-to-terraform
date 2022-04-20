@@ -21,16 +21,43 @@ terraform init
 terraform providers 
 ```
 
-4. Open the main.tf file in the text editor of your choice:
+4. Open the main.tf file in the text editor of your choice and note the kubectl_manifest resource, in particular note the lines highlighted in bold,
+   when the configuration is applied, Terraform will use what is known as 'Interpolation' to substitute ```{var.pvc_size}``` and ```{var.storage_class}```
+   with the values of ```pvc_size``` and ```storage_class``` from the terraform.tfvars file:
+```
+resource "kubectl_manifest" "test_pvc" {
+  wait = true
+  yaml_body = <<YAML
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: **${var.pvc_size}**
+  storageClassName: **${var.storage_class}**
+YAML
+}
+```
 
+Note
 
+Interpolation, the ability to insert text into larger bodies of text is one of the most powerful feature of Hashicorp Control Language
 
+5. Apply the configuration:
+```
+terraform apply -auto-approve
+```
 
+6. Verify that the test-pvc persistent volume claim has been created:
+```
+kubectl get pvc
+```
 
-
-## Destroy
-
-Execute the following command from the `tutorial-03` directory
+7. Return the Kubernetes cluster to the state it was in at the start of this tutorial:
 ```
 terraform destroy --auto-approve 
 ```
