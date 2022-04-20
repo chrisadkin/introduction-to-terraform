@@ -42,7 +42,7 @@ terraform workspace new arc
 
 4. Apply the configuration:
 ```
-terraform destroy --auto-approve 
+terraform apply --auto-approve 
 ```
    Note
    
@@ -83,7 +83,34 @@ resource "local_file" "kubespray_inventory" {
 }
 ```
 
-  - The templatefile function requires a template, this is the kubespray_inventory.tpl file:
+  - The templatefile function requires a template, this is the kubespray_inventory.tpl file in the templates folder:
 
 ```
+[all]
+${k8s_node_host_verbose_etcd}
+${k8s_node_host_verbose}
+
+[kube-master]
+${k8s_master_host}
+
+[etcd]
+${k8s_etcd_host}
+
+[kube-node]
+${k8s_node_host}
+
+[calico-rr]
+
+[k8s-cluster:children]
+kube-master
+kube-node
+calico-rr
 ```
+
+  - The templatefile function takes the locals variables, maps them to the ${ } placeholders in the template (.tpl) file and produces an 
+    inventory.ini file. 
+    
+5. Open the resulting inventory.ini files using a text editor of your choice, compare its contents to the values in the node_hosts variable in
+   the variables.tf file for the ```arc``` map.
+   
+6. 
