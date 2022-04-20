@@ -1,6 +1,6 @@
-# Overview
+# Objectives
 
-A simple configuration to create a Kubernetes namespace.
+Demonstrate the declarative native of Terraform with a simple configuration which creates a Kubernetes namespace.
 
 # Instructions
 
