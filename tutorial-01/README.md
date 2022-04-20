@@ -29,11 +29,11 @@ terraform apply --auto-approve
 kubectl get ns 
 ```
 
-6. Change the name of the namespace in the main.tf from "my-first-namespace" to something else:
+6. Change the name of the namespace in the main.tf from "tutorial-01" to something else:
 ```
 resource "kubernetes_namespace" "example" {
   metadata {
-    name = "my-first-namespace"
+    name = "tutorial-01"
   }
 }
 ```
