@@ -41,9 +41,36 @@ terraform workspace new arc
 ```
 
 4. Apply the configuration:
-
-
-
-
+```
 terraform destroy --auto-approve 
 ```
+   Note
+   
+   - the ```locals``` section parses the list of nested maps as key value pairs
+
+```
+locals {
+   all_nodes_verbose_etcd = [for k, v in var.node_hosts[terraform.workspace]: 
+                               format("%s ip=%s etcd_instance=%s", v.name, v.ipv4_address, v.etcd_instance)
+                               if length(v.etcd_instance) > 0]
+
+   all_nodes_verbose      = [for k, v in var.node_hosts[terraform.workspace]:
+                               format("%s ip=%s", v.name, v.ipv4_address) 
+                               if length(v.etcd_instance) == 0] 
+
+   master_nodes           = [for k, v in var.node_hosts[terraform.workspace]:
+                               v.name
+                               if v.compute_node != true] 
+
+   etcd_nodes             = [for k, v in var.node_hosts[terraform.workspace]:
+                               v.name 
+                               if length(v.etcd_instance) > 0] 
+
+   all_nodes              = values(var.node_hosts[terraform.workspace])[*].name
+}
+```
+  - The localfile resource creates a file via the templatefile fuction using the locals variables:
+```
+
+```
+
