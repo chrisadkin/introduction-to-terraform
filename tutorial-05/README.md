@@ -4,9 +4,14 @@ A configuration to demonstrate the use of a template with a local file resource.
 
 # Instructions
 
-Execute the following command from the `tutorial-05` directory
+1. Execute the following command from the `tutorial-05` directory
 ```
-terraform apply --auto-approve 
+terraform init 
+```
+
+2. Open the variables.tf file using the text editor of your choice:
+```
+
 ```
 
 
