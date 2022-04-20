@@ -1,9 +1,7 @@
-# Overview
+# Objectives
 
-A simple terraform configuration to demonstrate the creation of persistent volume claims with:
-
-- A nest map type variable
-- A loop within the main configuration file
+- Demonstrate the use a 
+- Demonstrate the use of iteration within a resource to create multiple entities of a resource type
 
 # Usage
 
