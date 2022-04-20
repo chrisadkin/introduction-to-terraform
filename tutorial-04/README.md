@@ -31,6 +31,7 @@ spec:
   storageClassName: standard 
 YAML
 }
+```
 
     The ```for_each = var.pvcs``` clause will cause Terraform to create a persistent volume for each member of the map in the variables.tf file:
 
