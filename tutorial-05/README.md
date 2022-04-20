@@ -1,17 +1,14 @@
-# Overview
+# Objectives
 
 A configuration to demonstrate the use of a template with a local file resource.
 
-# Usage
-
-## Apply
+# Instructions
 
 Execute the following command from the `tutorial-05` directory
 ```
 terraform apply --auto-approve 
 ```
 
-## Destroy
 
 Execute the following command from the `tutorial-05` directory
 ```
