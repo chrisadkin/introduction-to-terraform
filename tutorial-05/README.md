@@ -71,6 +71,19 @@ locals {
 ```
   - The localfile resource creates a file via the templatefile fuction using the locals variables:
 ```
-
+resource "local_file" "kubespray_inventory" {
+  content = templatefile("templates/kubespray_inventory.tpl", {
+    k8s_node_host_verbose_etcd = replace(join("\", \"\n", local.all_nodes_verbose_etcd), "\", \"", "") 
+    k8s_node_host_verbose      = replace(join("\", \"\n", local.all_nodes_verbose), "\", \"", "") 
+    k8s_master_host            = replace(join("\", \"\n", local.master_nodes), "\", \"", "") 
+    k8s_etcd_host              = replace(join("\", \"\n", local.etcd_nodes), "\", \"", "") 
+    k8s_node_host              = replace(join("\", \"\n", local.all_nodes), "\", \"", "") 
+  })
+  filename = "./inventory.ini"
+}
 ```
 
+  - The templatefile function requires a template, this is the kubespray_inventory.tpl file:
+
+```
+```
