@@ -1,19 +1,24 @@
-# Overview
+# Objectives
 
-A simple configuration to create a Kubernetes namespace using a variable.
+- Demonstrate the use of variables with Terraform configurations.
+- Demonstrate the use of Terraform workspaces
 
-# Usage
+# Instructions
 
-## Apply
+1. Execute the following command from the `tutorial-02` directory
+```
+terraform init 
+```
 
-Execute the following command from the `tutorial-02` directory
+2. Execute the following command from the `tutorial-02` directory
 ```
 terraform apply --auto-approve 
 ```
 
-## Destroy
+3. Look at the namespaces present in your Kubernetes cluster:
+```
+kubectl get ns 
+```
 
-Execute the following command from the `tutorial-02` directory
-```
-terraform destroy --auto-approve 
-```
+4. Open the terraform.tfvars file in the text editor of your choice and change 
+
