@@ -11,7 +11,7 @@ terraform init
 ```
 
 2. Open the main.tf file using the text editor of your choice, note that this looks very similar to the the file used in the last tutorial, but with one
-   key difference - ```for_each = var.pvcs```:
+   key difference - ```for_each = var.pvcs```, this will cause a persistent volume to be created for each map object in the list of maps variable:
 
 ```   
 resource "kubectl_manifest" "test_pvc" {
@@ -31,11 +31,7 @@ spec:
   storageClassName: standard 
 YAML
 }
-```
 
-    The ```for_each = var.pvcs``` clause will cause Terraform to create a persistent volume for each member of the map in the variables.tf file:
-
-```
 variable "pvcs" {
   type = map(object({
       name = string
