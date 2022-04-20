@@ -43,7 +43,7 @@ resource "kubernetes_namespace" "example" {
 terraform apply --auto-approve 
 ```
 
-8. Check the namespaces in the Kubernetes cluster again, why is the my-first-namespace namespace no longer present in the Kubernetes cluster ?
+8. Check the namespaces in the Kubernetes cluster again, why is the my-first-namespace namespace no longer present ?
 ```
 kubectl get ns 
 ```
