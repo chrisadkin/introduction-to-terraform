@@ -37,8 +37,8 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: **${var.pvc_size}**
-  storageClassName: **${var.storage_class}**
+      storage: __${var.pvc_size}__
+  storageClassName: __${var.storage_class}__
 YAML
 }
 ```
