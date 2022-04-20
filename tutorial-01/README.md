@@ -29,13 +29,26 @@ terraform apply --auto-approve
 kubectl get ns 
 ```
 
-6. 
+6. Change the name of the namespace in the main.tf from "my-first-namespace" to something else:
+```
+resource "kubernetes_namespace" "example" {
+  metadata {
+    name = "my-first-namespace"
+  }
+}
+```
 
+7. Apply the configuration again:
+```
+terraform apply --auto-approve 
+```
 
+8. Check the namespaces in the Kubernetes cluster again, why is the my-first-namespace namespace no longer present in the Kubernetes cluster ?
+```
+kubectl get ns 
+```
 
-## Destroy
-
-Execute the following command from the `tutorial-01` directory
+9. Execute the following command from the `tutorial-01` directory
 ```
 terraform destroy --auto-approve 
 ```
