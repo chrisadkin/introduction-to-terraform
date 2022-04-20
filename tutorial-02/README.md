@@ -1,7 +1,7 @@
 # Objectives
 
 - Demonstrate the use of variables with Terraform configurations.
-- Demonstrate the use of Terraform workspaces
+- Demonstrate the use of Terraform workspaces.
 
 # Instructions
 
