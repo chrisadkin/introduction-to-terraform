@@ -21,7 +21,7 @@ terraform init
 terraform providers 
 ```
 
-4. Open the main.tf file in the text editor of your choice and note the kubectl_manifest resource, in particular note the lines highlighted in bold,
+4. Open the main.tf file in the text editor of your choice and note the kubectl_manifest resource, in particular note the text enclosed with ${ },
    when the configuration is applied, Terraform will use what is known as 'Interpolation' to substitute ```{var.pvc_size}``` and ```{var.storage_class}```
    with the values of ```pvc_size``` and ```storage_class``` from the terraform.tfvars file:
 ```
@@ -37,8 +37,8 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: __${var.pvc_size}__
-  storageClassName: __${var.storage_class}__
+      storage: ${var.pvc_size}
+  storageClassName: ${var.storage_class}
 YAML
 }
 ```
