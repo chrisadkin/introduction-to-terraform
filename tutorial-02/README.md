@@ -20,5 +20,11 @@ terraform apply --auto-approve
 kubectl get ns 
 ```
 
-4. Open the terraform.tfvars file in the text editor of your choice and change 
+4. Open the terraform.tfvars file in the text editor of your choice and change "tutorial-02" to something else:
+```
+namespace = "tutorial-02"
+```
 
+Note:
+
+- 
