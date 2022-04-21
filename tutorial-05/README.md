@@ -113,4 +113,21 @@ calico-rr
 5. Open the resulting inventory.ini files using a text editor of your choice, compare its contents to the values in the node_hosts variable in
    the variables.tf file for the ```arc``` map.
    
-6. 
+6. Create a new terraform workspace called 'bdc':
+```
+terraform workspace new bdc
+```
+
+7. Apply the terraform configuration
+```
+terraform apply -auto-approve
+```
+
+8. Open the inventory.ini file and compare it to the map object contents associated with the ```node_hosts``` variable in the variables.tf file.
+
+9. Reset the kubernetes cluster back to the state it was in at the beginning of the tutorial:
+```
+terraform destroy -auto-approve
+terraform workspace select arc
+terraform destroy -auto-approve
+```
