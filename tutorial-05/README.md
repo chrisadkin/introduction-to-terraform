@@ -33,6 +33,9 @@ variable "node_hosts" {
         etcd_instance = "etcd2"
         ipv4_address  = "10.123.456.02"
       },
+      .
+      .
+      .
 ```
 
 3. Create a terraform arc workspace:
