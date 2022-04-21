@@ -1,6 +1,7 @@
 # Objectives
 
-A configuration to demonstrate the use of a template with a local file resource.
+- Demonstrate file creationthe using the HCL templatefile function with locals variables
+- Demonstrate how a terraform workspace can be used as an index for accessing a list of nested maps variable
 
 # Instructions
 
