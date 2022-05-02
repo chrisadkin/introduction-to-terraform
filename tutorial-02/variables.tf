@@ -1,3 +1,5 @@
 variable "namespace" {
-  type = string
+  type    = string
+  default = "default-value"
+  sensitive = true
 }
